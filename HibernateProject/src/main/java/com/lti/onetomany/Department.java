@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 /*
@@ -48,6 +49,7 @@ employees1_.employeeSalary as employee4_1_2_
 Dept Number
  */
 @Entity
+@NamedQuery(name="Department.findAll", query="SELECT d FROM Department d")
 @Table(name="mydepartment")
 public class Department {
 

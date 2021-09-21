@@ -1,11 +1,5 @@
 package com.lti.onetomany;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 /*
  * EMPNO ENAME JOB  SAL DNO
  * 111   JACK  MGR  555 10
@@ -16,6 +10,10 @@ import javax.persistence.Table;
  * 
  */
 @Entity
+@NamedQueries({
+@NamedQuery(name="Employee.findAll",query="SELECT e FROM Employee e"),
+@NamedQuery(name="Employee.findByName",query="SELECT e FROM Employee e WHERE e.employeeName = :xyz")
+})
 @Table(name="myemployee")
 public class Employee {
 
